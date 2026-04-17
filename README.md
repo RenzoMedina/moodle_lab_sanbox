@@ -23,7 +23,7 @@ This repository contains a Docker Compose configuration for setting up a Moodle 
 ## 📖 Usage
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/moodle_lab.git
+   git clone https://github.com/RenzoMedina/moodle_lab_sanbox
    cd moodle_lab_sandbox
     ```
 2. Start the Docker Compose environment:
