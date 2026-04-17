@@ -1,0 +1,85 @@
+services:
+  #database
+  db:
+    image: mariadb:10.11
+    container_name: moodle_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: moodle_lab_2026
+      MYSQL_DATABASE: moodle
+      MYSQL_USER: moodleuser
+      MYSQL_PASSWORD: moodle_lab_pass_2026
+    volumes:
+      - db_data:/var/lib/mysql
+    command: --max_allowed_packet=256M --innodb_log_file_size=512M --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - moodle_network
+
+  #moodle
+  moodle:
+    build: .
+    container_name: moodle_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    volumes:
+      - moodle_html:/var/www/html 
+      - moodledata:/var/www/moodledata
+      # Monta los plugins locales desde tu máquina al contenedor de Moodle
+      # ./plugins/local/miplugin:/var/www/html/local/miplugin
+      # Monta los plugins blocks desde tu máquina al contenedor de Moodle
+      # ./plugins/block/miplugin:/var/www/html/block/miplugin
+      # Monta los plugins Theme desde tu máquina al contenedor de Moodle
+      # ./plugins/theme/miplugin:/var/www/html/theme/miplugin
+    environment: 
+      - MOODLE_DATABASE_TYPE=mariadb
+      - MOODLE_DATABASE_HOST=db
+      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_NAME=moodle
+      - MOODLE_DATABASE_USER=moodleuser
+      - MOODLE_DATABASE_PASSWORD=moodle_lab_pass_2026
+    networks:
+      - moodle_network
+
+  #grunt (build JS sin modificar el contenedor de Moodle)
+  grunt:
+    image: node:22.11.0
+    container_name: moodle_grunt
+    working_dir: /var/www/html
+    depends_on:
+      - moodle
+    volumes:
+      - moodle_html:/var/www/html
+      # ./plugins/local/questionconverter:/var/www/html/local/questionconverter
+      # ./plugins/blocks/list_user:/var/www/html/blocks/list_user
+    command: >
+      bash -lc "
+      until [ -f /var/www/html/version.php ]; do echo 'Esperando a Moodle...'; sleep 2; done;
+      npm install;
+      npx grunt amd --force
+      "
+    networks:
+      - moodle_network
+    
+#data persistence
+volumes:
+  db_data:
+    driver: local
+  moodledata:
+    driver: local
+  moodle_html: 
+    driver: local
+
+#networks
+networks:
+  moodle_network:
+    driver: bridge
