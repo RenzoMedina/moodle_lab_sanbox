@@ -24,20 +24,18 @@
 defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'moodle_lab';
-$THEME->sheets = [];
+$THEME->sheets = ['tailwind', 'custom'];
 $THEME->parents = ['boost'];
 $THEME->editor_sheets = ['editor'];
 $THEME->enable_dock = false;
-$THEME->usefallback = false;
-// $THEME->extrascsscallback = 'theme_moodle_lab_get_extra_scss';
-// $THEME->prescsscallback = 'theme_moodle_lab_get_pre_scss';
-// $THEME->precompiledcsscallback = 'theme_moodle_lab_get_precompiled_css';
 $THEME->yuicssmodules = [];
-$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
-$THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
-$THEME->haseditswitch = true;
-$THEME->usescourseindex = true;
-// By default, all Moodle theme do not need their titles displayed.
-$THEME->activityheaderconfig = [
-    'notitle' => true,
+$THEME->layout = [
+    'login' => [
+        'file' => 'login.php',
+        'regions' => [],
+        'defaultregion' => '',
+    ],
 ];
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';
+$THEME->requiredblocks = '';
+$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;

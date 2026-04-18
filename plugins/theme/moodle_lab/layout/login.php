@@ -13,22 +13,18 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
-
+defined('MOODLE_INTERNAL') || die();
 /**
- * Plugin version and other meta-data are defined here.
+ * Login page template
  *
  * @package     theme_moodle_lab
  * @copyright   2026 Renzo Medina <medinast30@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->component = 'theme_moodle_lab';
-$plugin->release = '0.1.0';
-$plugin->version = 2026041600;
-$plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_ALPHA;
-$plugin->dependencies = [
-    'theme_boost' => 2022112800,
+$bodyattributes = $OUTPUT->body_attributes();
+$templatecontext = [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), 'escape' => false]),
+    'output' => $OUTPUT,
+    'bodyattributes' => $bodyattributes
 ];
+echo $OUTPUT->render_from_template('theme_moodle_lab/login', $templatecontext);

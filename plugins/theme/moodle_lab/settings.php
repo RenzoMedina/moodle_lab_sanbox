@@ -27,13 +27,4 @@ defined('MOODLE_INTERNAL') || die();
 // phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
 $settings = null;
 if ($ADMIN->fulltree) {
-    $settings = new admin_settingpage('theme_moodle_lab_general', get_string('generalsettings', 'theme_moodle_lab'));
-
-    // Brand color setting.
-    $name = 'theme_moodle_lab/brandcolor';
-    $title = get_string('brandcolor', 'theme_moodle_lab');
-    $description = get_string('brandcolordesc', 'theme_moodle_lab');
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '#009688');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
 }

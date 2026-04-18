@@ -25,8 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['loginbackgroundimage'] = 'Login background image';
+$string['loginbackgroundimagedesc'] = 'Upload an image to be used as the background on the login page.';
 $string['pluginname'] = 'Moodle Lab Theme';
-$string['generalsettings'] = 'General settings';
+$string['generalsettings'] = 'General settings'; 
 $string['brandcolor'] = 'Brand color';
 $string['brandcolordesc'] = 'The primary color used across the theme.';
 $string['configtitle'] = 'Moodle Lab Theme Settings';
