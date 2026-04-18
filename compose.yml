@@ -39,7 +39,7 @@ services:
       # Monta los plugins blocks desde tu máquina al contenedor de Moodle
       # ./plugins/block/miplugin:/var/www/html/block/miplugin
       # Monta los plugins Theme desde tu máquina al contenedor de Moodle
-      # ./plugins/theme/miplugin:/var/www/html/theme/miplugin
+      - ./plugins/theme/moodle_lab:/var/www/html/theme/moodle_lab
     environment: 
       - MOODLE_DATABASE_TYPE=mariadb
       - MOODLE_DATABASE_HOST=db
