@@ -35,6 +35,11 @@ $THEME->layout = [
         'regions' => [],
         'defaultregion' => '',
     ],
+    'drawers' => [
+        'file' => 'drawers.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+    ],
 ];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';
