@@ -22,7 +22,3 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-
-function theme_moodle_lab_get_main_scss_content($theme) {
-    return '';
-}
