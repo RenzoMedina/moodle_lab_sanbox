@@ -1,0 +1,6 @@
+@mixin hover {
+    &:hover {
+        background-color: $accent;
+        scale: .99;
+    }
+}

@@ -1,0 +1,28 @@
+// This a component
+.btn-primary {
+    background-color: $primary;
+    color: $surface;
+    font-weight: $font-weight-normal;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    @include hover;
+}
+.btn-secondary {
+    background-color: $secondary;
+    color: $surface;
+    font-weight: $font-weight-normal;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    @include hover;
+}
+.card-body {
+    border: 0.5px solid $border;
+    padding: 1rem;
+    border-radius: 4px;
+}
