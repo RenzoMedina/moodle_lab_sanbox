@@ -24,7 +24,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'moodle_lab';
-$THEME->sheets = ['tailwind', 'custom'];
+//$THEME->sheets = ['tailwind', 'custom'];
 $THEME->parents = ['boost'];
 $THEME->editor_sheets = ['editor'];
 $THEME->enable_dock = false;
@@ -43,4 +43,8 @@ $THEME->layout = [
 ];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';
+$THEME->prescsscallback = 'theme_moodle_lab_get_pre_scss';
+$THEME->scss = function($theme) {
+        return theme_moodle_lab_get_main_scss_content($theme);
+};
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
