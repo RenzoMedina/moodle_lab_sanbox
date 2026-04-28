@@ -23,6 +23,11 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
+function theme_moodle_lab_get_pre_scss($theme) {
+    $scss = '';
+    $scss .= file_get_contents(__DIR__ . '/scss/variables.scss');
+    return $scss;
+}
 function theme_moodle_lab_get_main_scss_content($theme) {
     $scss = '';
     $theme = theme_config::load('moodle_lab');
@@ -30,11 +35,5 @@ function theme_moodle_lab_get_main_scss_content($theme) {
         $scss = theme_boost_get_main_scss_content($theme);
         // Luego agrega el SCSS propio del tema.
         $scss .= "\n" . file_get_contents(__DIR__ . '/scss/main.scss');
-    return $scss;
-}
-
-function theme_moodle_lab_get_pre_scss($theme) {
-    $scss = '';
-    $scss .= file_get_contents(__DIR__ . '/scss/variables.scss');
     return $scss;
 }

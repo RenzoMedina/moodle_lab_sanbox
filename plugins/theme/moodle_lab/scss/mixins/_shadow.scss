@@ -1,0 +1,6 @@
+@mixin shadow ($color, $shadow-weigth: 12px, $shadow-weigth-hover: 20px) {
+    box-shadow: 0 0  $shadow-weigth rgba($color, 0.4);
+    &:hover {
+         box-shadow: 0 0 $shadow-weigth-hover rgba($color, 0.6);
+    }
+}

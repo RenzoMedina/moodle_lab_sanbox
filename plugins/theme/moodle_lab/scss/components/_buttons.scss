@@ -1,28 +1,25 @@
 // This a component
 .btn-primary {
-    background-color: $primary;
-    color: $surface;
-    font-weight: $font-weight-normal;
+    background-color: $color-accent;
+    color: $color-primary;
+    font-weight: $font-weight-bold;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 10px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    @include hover;
+    transition: background-color 200ms ease;
+    @include shadow(rgb(0, 217, 255));
+    @include hover($color-accent-dark);
 }
 .btn-secondary {
-    background-color: $secondary;
-    color: $surface;
-    font-weight: $font-weight-normal;
+    background-color: $color-accent-secondary;
+    color: $color-surface;
+    font-weight: $font-weight-bold;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 10px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    @include hover;
-}
-.card-body {
-    border: 0.5px solid $border;
-    padding: 1rem;
-    border-radius: 4px;
+    transition: background-color 200ms ease;
+    @include shadow( rgb(255, 0, 217));
+    @include hover($color-accent-secondar-dark);
 }
