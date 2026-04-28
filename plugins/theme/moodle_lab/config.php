@@ -24,7 +24,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'moodle_lab';
-//$THEME->sheets = ['tailwind', 'custom'];
+$THEME->sheets = ['tailwind', 'custom'];
 $THEME->parents = ['boost'];
 $THEME->editor_sheets = ['editor'];
 $THEME->enable_dock = false;
