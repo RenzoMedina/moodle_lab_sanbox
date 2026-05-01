@@ -1,0 +1,63 @@
+.navbar.fixed-top{
+    box-shadow: 0 1px 20px rgba(0, 217, 255, 0.427);
+    color : $color-surface;
+}
+.navbar-expand{
+    background: $color-surface-dark;
+    border-bottom: 1px solid #2D3748;
+    font-size: $font-size-lg;
+    .navbar-brand {
+        color: $color-accent-dark;
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-xl;
+        &:hover {
+            color: $color-accent;
+        }
+    }
+}
+.navbar-nav .nav-item .nav-link {
+    color : $color-surface;
+    transition: all 0.3s ease;
+    &.active {
+        color: $color-accent;
+        border-bottom: 4px solid $color-accent;
+        font-weight: $font-weight-semibold;
+    }
+    &:hover {
+        color: $color-text-secondary;
+        background: transparent;
+        text-decoration: underline $color-accent 2px;
+
+    }
+}
+.usermenu .userinitials{
+    background: $color-primary;
+    border: $color-gray solid 1px;
+    color: $color-text-primary;
+    font-weight: $font-weight-medium;
+}
+.dropdown-menu{
+    background: $color-primary;
+    border: $color-gray solid 1px;
+    .dropdown-item{
+        color: $color-text-primary;
+        &:hover {
+            color: $color-accent;
+        }
+    }
+}
+.dropdown-menu .header{
+    color: $color-text-primary;
+}
+.navbar-nav .popover-region i{
+    color: $color-text-primary;
+}
+.text-primary{
+    color: $color-accent !important;
+}
+.custom-control-input:checked ~ .custom-control-label{
+    &::before{
+        border-color: $color-accent;
+        background: $color-accent;
+    }
+}
