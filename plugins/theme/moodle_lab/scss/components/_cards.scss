@@ -1,0 +1,35 @@
+.moodle-lab-card-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.moodle-lab-card-btn a {
+    background: $color-accent-dark;
+    color: $color-surface-dark;
+    font-weight: $font-weight-semibold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: background 0.4s ease;
+    &:hover {
+        background: $color-accent;
+        transform: scale(0.98);
+    }
+}
+.moodle-lab-course-shortname{
+    font-size: $font-size-lg;
+}
+.moodle-lab-card {
+    background: $color-primary-light;
+    border: 1px solid $color-border;
+    border-radius: $font-size-xs;
+    color: $color-text-primary;
+    transition: all 200ms ease;
+    box-shadow: 0 0 24px rgba(0, 217, 255, 0.15);
+}
+.moodle-lab-card-footer{
+    position: relative;
+    
+}

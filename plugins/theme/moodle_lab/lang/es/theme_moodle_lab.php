@@ -25,11 +25,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['loginbackgroundimage'] = 'Login background image';
-$string['loginbackgroundimagedesc'] = 'Upload an image to be used as the background on the login page.';
-$string['pluginname'] = 'Moodle Lab Theme';
-$string['generalsettings'] = 'General settings'; 
-$string['brandcolor'] = 'Brand color';
-$string['brandcolordesc'] = 'The primary color used across the theme.';
-$string['configtitle'] = 'Moodle Lab Theme Settings';
-$string['viewcourse'] = 'View course';
+$string['loginbackgroundimage'] = 'Imagen de fondo de inicio de sesión';
+$string['loginbackgroundimagedesc'] = 'Sube una imagen para usar como fondo en la página de inicio de sesión.';
+$string['pluginname'] = 'Tema Moodle Lab';
+$string['generalsettings'] = 'Configuración general'; 
+$string['brandcolor'] = 'Color de la marca';
+$string['brandcolordesc'] = 'El color principal utilizado en todo el tema.';
+$string['configtitle'] = 'Configuración del tema Moodle Lab';
+$string['viewcourse'] = 'Accede al curso';
